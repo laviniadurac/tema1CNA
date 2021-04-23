@@ -1,0 +1,24 @@
+syntax = "proto3";
+import "google/protobuf/any.proto";
+import "google/protobuf/empty.proto";
+
+option java_package = "proto";
+
+service PersonService{
+  rpc getNameAndCNP(UserRequest) returns (Response);
+}
+
+message UserRequest
+{
+  string name = 1;
+  string cnp = 2;
+}
+
+message Response{
+  string name = 1;
+  string gender = 2;
+  string age = 3;
+
+}
+
+
